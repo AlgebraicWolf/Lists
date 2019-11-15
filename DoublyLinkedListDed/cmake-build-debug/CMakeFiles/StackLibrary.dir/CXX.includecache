@@ -6,13 +6,13 @@
 
 #IncludeRegexTransform: 
 
-/home/alexey/Programming/MIPT_1sem_programming_homework/DoublyLinkedListDed/MurMurHash3.h
+/home/alexey/Programming/Lists/DoublyLinkedListDed/MurMurHash3.h
 
-/home/alexey/Programming/MIPT_1sem_programming_homework/DoublyLinkedListDed/stack.cpp
+/home/alexey/Programming/Lists/DoublyLinkedListDed/stack.cpp
 stack.h
-/home/alexey/Programming/MIPT_1sem_programming_homework/DoublyLinkedListDed/stack.h
+/home/alexey/Programming/Lists/DoublyLinkedListDed/stack.h
 MurMurHash3.h
-/home/alexey/Programming/MIPT_1sem_programming_homework/DoublyLinkedListDed/MurMurHash3.h
+/home/alexey/Programming/Lists/DoublyLinkedListDed/MurMurHash3.h
 assert.h
 -
 string.h
@@ -20,7 +20,7 @@ string.h
 wchar.h
 -
 
-/home/alexey/Programming/MIPT_1sem_programming_homework/DoublyLinkedListDed/stack.h
+/home/alexey/Programming/Lists/DoublyLinkedListDed/stack.h
 stdlib.h
 -
 stdio.h

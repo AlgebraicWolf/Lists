@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/alexey/Programming/MIPT_1sem_programming_homework/DoublyLinkedListDed/stack.cpp" "/home/alexey/Programming/MIPT_1sem_programming_homework/DoublyLinkedListDed/cmake-build-debug/CMakeFiles/StackLibrary.dir/stack.cpp.o"
+  "/home/alexey/Programming/Lists/DoublyLinkedListDed/stack.cpp" "/home/alexey/Programming/Lists/DoublyLinkedListDed/cmake-build-debug/CMakeFiles/StackLibrary.dir/stack.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

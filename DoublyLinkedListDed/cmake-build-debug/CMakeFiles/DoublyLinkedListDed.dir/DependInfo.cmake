@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/alexey/Programming/MIPT_1sem_programming_homework/DoublyLinkedListDed/main.cpp" "/home/alexey/Programming/MIPT_1sem_programming_homework/DoublyLinkedListDed/cmake-build-debug/CMakeFiles/DoublyLinkedListDed.dir/main.cpp.o"
+  "/home/alexey/Programming/Lists/DoublyLinkedListDed/main.cpp" "/home/alexey/Programming/Lists/DoublyLinkedListDed/cmake-build-debug/CMakeFiles/DoublyLinkedListDed.dir/main.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
@@ -14,8 +14,8 @@ set(CMAKE_CXX_TARGET_INCLUDE_PATH
 
 # Targets to which this target links.
 set(CMAKE_TARGET_LINKED_INFO_FILES
-  "/home/alexey/Programming/MIPT_1sem_programming_homework/DoublyLinkedListDed/cmake-build-debug/CMakeFiles/StackLibrary.dir/DependInfo.cmake"
-  "/home/alexey/Programming/MIPT_1sem_programming_homework/DoublyLinkedListDed/cmake-build-debug/CMakeFiles/MurMurHash3.dir/DependInfo.cmake"
+  "/home/alexey/Programming/Lists/DoublyLinkedListDed/cmake-build-debug/CMakeFiles/StackLibrary.dir/DependInfo.cmake"
+  "/home/alexey/Programming/Lists/DoublyLinkedListDed/cmake-build-debug/CMakeFiles/MurMurHash3.dir/DependInfo.cmake"
   )
 
 # Fortran module output directory.

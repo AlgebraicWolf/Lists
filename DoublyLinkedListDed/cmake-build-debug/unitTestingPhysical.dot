@@ -1,0 +1,46 @@
+digraph {
+mainNode[shape=none,
+label = <<table><tr><td port="node0next" border="1" bgcolor="cadetblue">0</td>
+<td port="node1next" border="1" bgcolor="darkgoldenrod1">1</td>
+<td port="node2next" border="1" bgcolor="indianred1">2</td>
+<td port="node3next" border="1" bgcolor="indianred1">3</td>
+<td port="node4next" border="1" bgcolor="seagreen1">4</td>
+<td port="node5next" border="1" bgcolor="seagreen1">5</td>
+<td port="node6next" border="1" bgcolor="seagreen1">6</td>
+<td port="node7next" border="1" bgcolor="seagreen1">7</td>
+<td port="node8next" border="1" bgcolor="seagreen1">8</td>
+<td port="node9next" border="1" bgcolor="seagreen1">9</td>
+</tr>
+<tr>
+<td port="node0prev" border="1" bgcolor="cadetblue">VALUE: 2</td>
+<td port="node1prev" border="1" bgcolor="darkgoldenrod1">VALUE: 9</td>
+<td port="node2prev" border="1" bgcolor="indianred1">EMPTY</td>
+<td port="node3prev" border="1" bgcolor="indianred1">EMPTY</td>
+<td port="node4prev" border="1" bgcolor="seagreen1">VALUE: 3</td>
+<td port="node5prev" border="1" bgcolor="seagreen1">VALUE: 4</td>
+<td port="node6prev" border="1" bgcolor="seagreen1">VALUE: 5</td>
+<td port="node7prev" border="1" bgcolor="seagreen1">VALUE: 6</td>
+<td port="node8prev" border="1" bgcolor="seagreen1">VALUE: 7</td>
+<td port="node9prev" border="1" bgcolor="seagreen1">VALUE: 8</td>
+</tr></table>>
+];
+mainNode:node0next:n -> mainNode:node4next:n [color="forestgreen"];
+mainNode:node4next:n -> mainNode:node5next:n [color="forestgreen"];
+mainNode:node5next:n -> mainNode:node6next:n [color="forestgreen"];
+mainNode:node6next:n -> mainNode:node7next:n [color="forestgreen"];
+mainNode:node7next:n -> mainNode:node8next:n [color="forestgreen"];
+mainNode:node8next:n -> mainNode:node9next:n [color="forestgreen"];
+mainNode:node9next:n -> mainNode:node1next:n [color="forestgreen"];
+mainNode:node1prev:s -> mainNode:node9prev:s [color="firebrick"];
+mainNode:node9prev:s -> mainNode:node8prev:s [color="firebrick"];
+mainNode:node8prev:s -> mainNode:node7prev:s [color="firebrick"];
+mainNode:node7prev:s -> mainNode:node6prev:s [color="firebrick"];
+mainNode:node6prev:s -> mainNode:node5prev:s [color="firebrick"];
+mainNode:node5prev:s -> mainNode:node4prev:s [color="firebrick"];
+mainNode:node4prev:s -> mainNode:node0prev:s [color="firebrick"];
+{rank=same;
+empty2 [label="2", shape=box];
+empty3 [label="3", shape=box];
+empty2 -> empty3;
+}
+;}

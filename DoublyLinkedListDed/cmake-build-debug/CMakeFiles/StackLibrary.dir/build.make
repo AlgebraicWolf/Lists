@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/alexey/Programming/MIPT_1sem_programming_homework/DoublyLinkedListDed
+CMAKE_SOURCE_DIR = /home/alexey/Programming/Lists/DoublyLinkedListDed
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/alexey/Programming/MIPT_1sem_programming_homework/DoublyLinkedListDed/cmake-build-debug
+CMAKE_BINARY_DIR = /home/alexey/Programming/Lists/DoublyLinkedListDed/cmake-build-debug
 
 # Include any dependencies generated for this target.
 include CMakeFiles/StackLibrary.dir/depend.make
@@ -59,16 +59,16 @@ include CMakeFiles/StackLibrary.dir/flags.make
 
 CMakeFiles/StackLibrary.dir/stack.cpp.o: CMakeFiles/StackLibrary.dir/flags.make
 CMakeFiles/StackLibrary.dir/stack.cpp.o: ../stack.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/alexey/Programming/MIPT_1sem_programming_homework/DoublyLinkedListDed/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/StackLibrary.dir/stack.cpp.o"
-	/usr/bin/g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/StackLibrary.dir/stack.cpp.o -c /home/alexey/Programming/MIPT_1sem_programming_homework/DoublyLinkedListDed/stack.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/alexey/Programming/Lists/DoublyLinkedListDed/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/StackLibrary.dir/stack.cpp.o"
+	/usr/bin/g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/StackLibrary.dir/stack.cpp.o -c /home/alexey/Programming/Lists/DoublyLinkedListDed/stack.cpp
 
 CMakeFiles/StackLibrary.dir/stack.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/StackLibrary.dir/stack.cpp.i"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/alexey/Programming/MIPT_1sem_programming_homework/DoublyLinkedListDed/stack.cpp > CMakeFiles/StackLibrary.dir/stack.cpp.i
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/alexey/Programming/Lists/DoublyLinkedListDed/stack.cpp > CMakeFiles/StackLibrary.dir/stack.cpp.i
 
 CMakeFiles/StackLibrary.dir/stack.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/StackLibrary.dir/stack.cpp.s"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/alexey/Programming/MIPT_1sem_programming_homework/DoublyLinkedListDed/stack.cpp -o CMakeFiles/StackLibrary.dir/stack.cpp.s
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/alexey/Programming/Lists/DoublyLinkedListDed/stack.cpp -o CMakeFiles/StackLibrary.dir/stack.cpp.s
 
 # Object files for target StackLibrary
 StackLibrary_OBJECTS = \
@@ -80,7 +80,7 @@ StackLibrary_EXTERNAL_OBJECTS =
 libStackLibrary.a: CMakeFiles/StackLibrary.dir/stack.cpp.o
 libStackLibrary.a: CMakeFiles/StackLibrary.dir/build.make
 libStackLibrary.a: CMakeFiles/StackLibrary.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/alexey/Programming/MIPT_1sem_programming_homework/DoublyLinkedListDed/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX static library libStackLibrary.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/alexey/Programming/Lists/DoublyLinkedListDed/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX static library libStackLibrary.a"
 	$(CMAKE_COMMAND) -P CMakeFiles/StackLibrary.dir/cmake_clean_target.cmake
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/StackLibrary.dir/link.txt --verbose=$(VERBOSE)
 
@@ -94,6 +94,6 @@ CMakeFiles/StackLibrary.dir/clean:
 .PHONY : CMakeFiles/StackLibrary.dir/clean
 
 CMakeFiles/StackLibrary.dir/depend:
-	cd /home/alexey/Programming/MIPT_1sem_programming_homework/DoublyLinkedListDed/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/alexey/Programming/MIPT_1sem_programming_homework/DoublyLinkedListDed /home/alexey/Programming/MIPT_1sem_programming_homework/DoublyLinkedListDed /home/alexey/Programming/MIPT_1sem_programming_homework/DoublyLinkedListDed/cmake-build-debug /home/alexey/Programming/MIPT_1sem_programming_homework/DoublyLinkedListDed/cmake-build-debug /home/alexey/Programming/MIPT_1sem_programming_homework/DoublyLinkedListDed/cmake-build-debug/CMakeFiles/StackLibrary.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/alexey/Programming/Lists/DoublyLinkedListDed/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/alexey/Programming/Lists/DoublyLinkedListDed /home/alexey/Programming/Lists/DoublyLinkedListDed /home/alexey/Programming/Lists/DoublyLinkedListDed/cmake-build-debug /home/alexey/Programming/Lists/DoublyLinkedListDed/cmake-build-debug /home/alexey/Programming/Lists/DoublyLinkedListDed/cmake-build-debug/CMakeFiles/StackLibrary.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/StackLibrary.dir/depend
 

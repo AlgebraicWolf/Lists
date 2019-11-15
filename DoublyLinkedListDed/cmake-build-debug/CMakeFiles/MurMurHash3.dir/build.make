@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/alexey/Programming/MIPT_1sem_programming_homework/DoublyLinkedListDed
+CMAKE_SOURCE_DIR = /home/alexey/Programming/Lists/DoublyLinkedListDed
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/alexey/Programming/MIPT_1sem_programming_homework/DoublyLinkedListDed/cmake-build-debug
+CMAKE_BINARY_DIR = /home/alexey/Programming/Lists/DoublyLinkedListDed/cmake-build-debug
 
 # Include any dependencies generated for this target.
 include CMakeFiles/MurMurHash3.dir/depend.make
@@ -59,16 +59,16 @@ include CMakeFiles/MurMurHash3.dir/flags.make
 
 CMakeFiles/MurMurHash3.dir/MurMurHash3.cpp.o: CMakeFiles/MurMurHash3.dir/flags.make
 CMakeFiles/MurMurHash3.dir/MurMurHash3.cpp.o: ../MurMurHash3.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/alexey/Programming/MIPT_1sem_programming_homework/DoublyLinkedListDed/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/MurMurHash3.dir/MurMurHash3.cpp.o"
-	/usr/bin/g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/MurMurHash3.dir/MurMurHash3.cpp.o -c /home/alexey/Programming/MIPT_1sem_programming_homework/DoublyLinkedListDed/MurMurHash3.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/alexey/Programming/Lists/DoublyLinkedListDed/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/MurMurHash3.dir/MurMurHash3.cpp.o"
+	/usr/bin/g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/MurMurHash3.dir/MurMurHash3.cpp.o -c /home/alexey/Programming/Lists/DoublyLinkedListDed/MurMurHash3.cpp
 
 CMakeFiles/MurMurHash3.dir/MurMurHash3.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/MurMurHash3.dir/MurMurHash3.cpp.i"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/alexey/Programming/MIPT_1sem_programming_homework/DoublyLinkedListDed/MurMurHash3.cpp > CMakeFiles/MurMurHash3.dir/MurMurHash3.cpp.i
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/alexey/Programming/Lists/DoublyLinkedListDed/MurMurHash3.cpp > CMakeFiles/MurMurHash3.dir/MurMurHash3.cpp.i
 
 CMakeFiles/MurMurHash3.dir/MurMurHash3.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/MurMurHash3.dir/MurMurHash3.cpp.s"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/alexey/Programming/MIPT_1sem_programming_homework/DoublyLinkedListDed/MurMurHash3.cpp -o CMakeFiles/MurMurHash3.dir/MurMurHash3.cpp.s
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/alexey/Programming/Lists/DoublyLinkedListDed/MurMurHash3.cpp -o CMakeFiles/MurMurHash3.dir/MurMurHash3.cpp.s
 
 # Object files for target MurMurHash3
 MurMurHash3_OBJECTS = \
@@ -80,7 +80,7 @@ MurMurHash3_EXTERNAL_OBJECTS =
 libMurMurHash3.a: CMakeFiles/MurMurHash3.dir/MurMurHash3.cpp.o
 libMurMurHash3.a: CMakeFiles/MurMurHash3.dir/build.make
 libMurMurHash3.a: CMakeFiles/MurMurHash3.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/alexey/Programming/MIPT_1sem_programming_homework/DoublyLinkedListDed/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX static library libMurMurHash3.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/alexey/Programming/Lists/DoublyLinkedListDed/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX static library libMurMurHash3.a"
 	$(CMAKE_COMMAND) -P CMakeFiles/MurMurHash3.dir/cmake_clean_target.cmake
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/MurMurHash3.dir/link.txt --verbose=$(VERBOSE)
 
@@ -94,6 +94,6 @@ CMakeFiles/MurMurHash3.dir/clean:
 .PHONY : CMakeFiles/MurMurHash3.dir/clean
 
 CMakeFiles/MurMurHash3.dir/depend:
-	cd /home/alexey/Programming/MIPT_1sem_programming_homework/DoublyLinkedListDed/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/alexey/Programming/MIPT_1sem_programming_homework/DoublyLinkedListDed /home/alexey/Programming/MIPT_1sem_programming_homework/DoublyLinkedListDed /home/alexey/Programming/MIPT_1sem_programming_homework/DoublyLinkedListDed/cmake-build-debug /home/alexey/Programming/MIPT_1sem_programming_homework/DoublyLinkedListDed/cmake-build-debug /home/alexey/Programming/MIPT_1sem_programming_homework/DoublyLinkedListDed/cmake-build-debug/CMakeFiles/MurMurHash3.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/alexey/Programming/Lists/DoublyLinkedListDed/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/alexey/Programming/Lists/DoublyLinkedListDed /home/alexey/Programming/Lists/DoublyLinkedListDed /home/alexey/Programming/Lists/DoublyLinkedListDed/cmake-build-debug /home/alexey/Programming/Lists/DoublyLinkedListDed/cmake-build-debug /home/alexey/Programming/Lists/DoublyLinkedListDed/cmake-build-debug/CMakeFiles/MurMurHash3.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/MurMurHash3.dir/depend
 

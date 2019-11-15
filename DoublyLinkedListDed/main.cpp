@@ -75,10 +75,22 @@ void sortList(list_t *list);
 
 void dumpList(list_t *list, const char *dumpFilename, char *(*nodeDump)(list_t *, long long) = nullptr);
 
+void listPhysicalDump(list_t *list, const char *dumpFilename, char *(*nodeDump)(list_t *, long long));
+
 char *nodeDump(list_t *list, long long node) { // Example function
     static char str[65] = "";
     sprintf(str, "{VALUE|%d}|{NEXT|%lld}|{PREVIOUS|%lld}", *(int *) (list->value[node]), list->next[node],
             list->prev[node]);
+    return (char *) str;
+}
+
+char *nodeDumpClear(list_t *list, long long node) { // Example function
+    static char str[65] = "";
+    if (list->value[node])
+        sprintf(str, "VALUE: %d", *(int *) (list->value[node]));
+    else
+        sprintf(str, "EMPTY");
+
     return (char *) str;
 }
 
@@ -139,7 +151,9 @@ bool doUnitTesting() {
     UTEST(testList->tail == 1, valid);
 
     UTEST(validateList(testList) == OK, valid);
+    listPhysicalDump(testList, "unitTestingPhysical.dot", nodeDumpClear);
     sortList(testList);
+    listPhysicalDump(testList, "unitTestingSortedPhysical.dot", nodeDumpClear);
     dumpList(testList, "unitTestingDump.dot", nodeDump);
     deleteList(&testList);
     UTEST(!testList, valid);
@@ -175,11 +189,10 @@ list_t *createList(size_t maxsize) {
 
     for (long long i = maxsize - 1; i >= 0; i--) {
         list->next[i] = -1;
-        list->prev[i] = -1;
-        list->value[i] = (void *) (i + 1);
+        list->prev[i] = i + 1;
         //stackPush(&list->free, i);
     }
-    list->value[maxsize - 1] = nullptr;
+    list->prev[maxsize - 1] = -1;
     return list;
 }
 
@@ -273,7 +286,8 @@ long long getEmpty(list_t *list) {
     assert(list);
 
     long long empty = list->emptyHead;
-    list->emptyHead = (long long) list->value[list->emptyHead];
+    list->emptyHead = list->prev[empty];
+    list->prev[empty] = -1;
     return empty;
 }
 
@@ -286,7 +300,7 @@ long long getEmpty(list_t *list) {
 void addEmpty(list_t *list, long long num) {
     assert(list);
 
-    list->value[num] = (void *) list->emptyHead;
+    list->prev[num] = list->emptyHead;
     list->emptyHead = num;
 }
 
@@ -542,6 +556,8 @@ void deleteNode(list_t *list, long long node) {
     else
         list->tail = list->prev[node];
 
+    list->next[node] = -1;
+    list->value[node] = nullptr;
     list->size--;
     // stackPush(&list->free, node);
     addEmpty(list, node);
@@ -613,6 +629,85 @@ void dumpList(list_t *list, const char *dumpFilename, char *(*nodeDump)(list_t *
     fclose(dumpFile);
 }
 
+void listPhysicalDump(list_t *list, const char *dumpFilename, char *(*nDump)(list_t *, long long)) {
+    assert(list);
+    assert(dumpFilename);
+
+    FILE *dumpFile = fopen(dumpFilename, "w");
+    fprintf(dumpFile, "digraph {\n");
+
+    fprintf(dumpFile, "mainNode[shape=none,\nlabel = <<table><tr>");
+
+
+    for (long long i = 0; i < list->maxsize; i++) {
+        fprintf(dumpFile, "<td port=\"node%lldnext\" border=\"1\" bgcolor=\"", i);
+
+        if (i == list->head) {
+            fprintf(dumpFile, "cadetblue");
+        } else if (i == list->tail) {
+            fprintf(dumpFile, "darkgoldenrod1");
+        } else if (list->next[i] == -1) {
+            fprintf(dumpFile, "indianred1");
+        } else {
+            fprintf(dumpFile, "seagreen1");
+        }
+
+        fprintf(dumpFile, "\">%lld</td>\n", i);
+    }
+    fprintf(dumpFile, "</tr>\n<tr>\n");
+
+    for (long long i = 0; i < list->maxsize; i++) {
+        fprintf(dumpFile, "<td port=\"node%lldprev\" border=\"1\" bgcolor=\"", i);
+
+        if (i == list->head) {
+            fprintf(dumpFile, "cadetblue");
+        } else if (i == list->tail) {
+            fprintf(dumpFile, "darkgoldenrod1");
+        } else if (list->next[i] == -1) {
+            fprintf(dumpFile, "indianred1");
+        } else {
+            fprintf(dumpFile, "seagreen1");
+        }
+
+        fprintf(dumpFile, "\">%s</td>\n", nDump(list, i));
+    }
+
+    fprintf(dumpFile, "</tr></table>>\n];\n");
+
+    long long node = list->head;
+
+    while (node != list->tail) {
+        fprintf(dumpFile, "mainNode:node%lldnext:n -> mainNode:node%lldnext:n [color=\"forestgreen\"];\n", node,
+                list->next[node]);
+
+        node = list->next[node];
+    }
+
+    node = list->tail;
+
+    while (node != list->head) {
+        fprintf(dumpFile, "mainNode:node%lldprev:s -> mainNode:node%lldprev:s [color=\"firebrick\"];\n", node,
+                list->prev[node]);
+
+        node = list->prev[node];
+    }
+
+    if (list->emptyHead != -1) {
+        long long empty = list->emptyHead;
+        fprintf(dumpFile, "{rank=same;\nempty%lld [label=\"%lld\", shape=box];\n", empty, empty);
+
+        while (list->prev[empty] != -1) {
+            fprintf(dumpFile, "empty%lld [label=\"%lld\", shape=box];\n", list->prev[empty], list->prev[empty]);
+            fprintf(dumpFile, "empty%lld -> empty%lld;\n", empty, list->prev[empty]);
+            empty = list->prev[empty];
+        }
+        fprintf(dumpFile, "}\n;");
+    }
+
+    fprintf(dumpFile, "}");
+    fclose(dumpFile);
+}
+
 void sortList(list_t *list) {
     assert(list);
     long long node = list->head;
@@ -626,14 +721,31 @@ void sortList(list_t *list) {
         list->value[pos] = list->value[node];
         list->value[node] = swapValue;
 
-        node = list->next[node];
+        nextNode = list->next[node];
+
+        if (list->next[pos] != -1) {
+            list->next[node] = list->next[pos];
+        }
+
+        node = nextNode;
+
         pos++;
+    }
+
+    list->prev[list->maxsize - 1] = -1;
+    list->next[list->maxsize - 1] = -1;
+
+    list->emptyHead = list->maxsize - 1;
+
+    for (long long i = list->maxsize - 2; i >= list->size; i--) {
+        addEmpty(list, i);
+        list->next[i] = -1;
     }
 
     for (int i = 0; i < list->size; i++) {
         if (i > 0)
             list->next[i - 1] = i;
-        if (i < list->maxsize - 1)
+        if (i < list->size - 1)
             list->prev[i + 1] = i;
     }
     list->head = 0;
