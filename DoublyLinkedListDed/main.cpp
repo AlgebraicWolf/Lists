@@ -629,6 +629,13 @@ void dumpList(list_t *list, const char *dumpFilename, char *(*nodeDump)(list_t *
     fclose(dumpFile);
 }
 
+/**
+ * Physical dump of memory
+ * @param list Pointer to list
+ * @param dumpFilename Where to saveDump
+ * @param nDump Node value dumper
+ */
+
 void listPhysicalDump(list_t *list, const char *dumpFilename, char *(*nDump)(list_t *, long long)) {
     assert(list);
     assert(dumpFilename);
@@ -708,6 +715,11 @@ void listPhysicalDump(list_t *list, const char *dumpFilename, char *(*nDump)(lis
     fclose(dumpFile);
 }
 
+/**
+ * Function that sorts list
+ * @param list
+ */
+
 void sortList(list_t *list) {
     assert(list);
     long long node = list->head;
@@ -752,4 +764,33 @@ void sortList(list_t *list) {
     list->tail = list->size - 1;
     list->next[list->tail] = -1;
     list->prev[list->head] = -1;
+
+}
+
+/**
+ * List verificator
+ * @param list Pointer to list object
+ * @return True if correct, False otherwise
+ */
+
+bool verifyList(list_t *list) {
+    if(list == nullptr)
+        return false;
+
+    long long node = list->head;
+
+    for(int i = 0; i < list->size - 1; i++) {
+        if (node == -1)
+            return false;
+
+        if(list->prev[list->next[node]] != node)
+            return false;
+
+        node = list->next[node];
+    }
+
+    if(node != list->head)
+        return false;
+
+    return true;
 }
